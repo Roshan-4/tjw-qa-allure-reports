@@ -1,0 +1,11 @@
+.side-nav__brand-icon {
+  background: url('tj-logo.png') no-repeat left center !important;
+  background-size: contain !important;
+  width: 170px;
+  height: 48px;
+}
+
+/* Full logo includes text — hide separate Allure label */
+.side-nav__brand-text {
+  display: none !important;
+}
