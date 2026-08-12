@@ -1,1 +1,1 @@
-[{"values":["PROD"],"name":"Environment"},{"values":["https://www.tractorjunction.com/"],"name":"BaseUrl"},{"values":["Chrome"],"name":"Browser"}]
+[{"values":["QA1"],"name":"Environment"},{"values":["https://t1tj.tractorfirst.com/"],"name":"BaseUrl"},{"values":["Chrome"],"name":"Browser"}]
