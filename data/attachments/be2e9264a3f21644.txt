@@ -1,0 +1,29 @@
+The following error originated from your application code, not from Cypress.
+
+  > onRoadThanksPopup is not defined
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+
+ReferenceError: The following error originated from your application code, not from Cypress.
+
+  > onRoadThanksPopup is not defined
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at HTMLSpanElement.onclick (https://www.tractorjunction.com/thank-you/?lead_id=7681764:3388:22)
+    at sendEvent (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:153576:32)
+    at sendMouseEvent (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:152927:12)
+    at sendClick (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:152988:12)
+    at Object._mouseClickEvents (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:153482:19)
+    at Object.click (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:153422:38)
+    at onReady (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:112536:37)
+    at onReady (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:112494:32)
+    at runAllChecks (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:113178:14)
+    at retryActionability (https://www.tractorjunction.com/__cypress/runner/cypress_runner.js:113201:16)
