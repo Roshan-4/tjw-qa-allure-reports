@@ -231,7 +231,7 @@ jobs:
           fi
           echo "report_url=https://roshan-4.github.io/tjw-qa-allure-reports/" >> "$GITHUB_OUTPUT"
 
-      - name: Send report email (roshanpaswan@tractorjunction.com only)
+      - name: Send report email (roshanpaswan@tractorjunction.com, mujjamilsalim@tractorjunction.com)
         env:
           EMAIL_API_URL: ${{ secrets.EMAIL_API_URL }}
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
@@ -259,6 +259,7 @@ jobs:
             --header "X-Api-Key: ${EMAIL_API_KEY}" \
             --header 'Accept: application/json' \
             --form "email[]=roshanpaswan@tractorjunction.com" \
+            --form "email[]=mujjamilsalim@tractorjunction.com" \
             --form "source=${EMAIL_SOURCE}" \
             --form "identifier=${EMAIL_IDENTIFIER}" \
             --form "data[projectName]=${EMAIL_PROJECT_NAME}" \
