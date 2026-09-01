@@ -1,0 +1,87 @@
+name: Run TJ Lead Forms Suite
+
+# This repo (Roshan-4/tjw-qa-allure-reports) is public, so GitHub Actions minutes here are
+# unlimited/free — unlike the private auto-junction/tjw-qa-automation repo where the actual
+# test code lives. This workflow checks out that private repo's code (using
+# PRIVATE_REPO_TOKEN, a repo secret with read access to it), runs the Cypress suite here
+# instead, and publishes the Allure report straight to this repo's own gh-pages content —
+# so none of it counts against the private repo's Actions quota.
+
+on:
+  schedule:
+    # 19:30 UTC = 01:00 AM IST. Adjust to taste — GitHub's schedule triggers only fire from
+    # the default branch's copy of this file (gh-pages is this repo's default branch).
+    - cron: '30 19 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  test-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout report repo (this repo, gh-pages)
+        uses: actions/checkout@v4
+        with:
+          path: report-repo
+
+      - name: Checkout private test-automation repo
+        uses: actions/checkout@v4
+        with:
+          repository: auto-junction/tjw-qa-automation
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: tjw-qa-automation
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: tjw-qa-automation
+        run: npm ci
+
+      - name: Install Allure commandline (already a devDependency, just verifying binary)
+        working-directory: tjw-qa-automation
+        run: npx cypress verify
+
+      - name: Run AllLeadFormsSuit — desktop (PROD, English)
+        working-directory: tjw-qa-automation
+        env:
+          ENV: PROD
+        run: >
+          npx cypress run --browser chrome --config video=false --env allure=true --spec
+          "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
+
+      - name: Run AllLeadFormsSuit — mobile vivo-t4x (PROD, English)
+        working-directory: tjw-qa-automation
+        env:
+          ENV: PROD
+          DEVICE: vivo-t4x
+        run: >
+          npx cypress run --browser chrome --config video=false --env allure=true --spec
+          "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
+        continue-on-error: true
+
+      - name: Generate Allure report
+        working-directory: tjw-qa-automation
+        run: npm run generate:report
+
+      - name: Publish report into this repo's gh-pages content
+        run: |
+          set -e
+          cd report-repo
+          find . -mindepth 1 -maxdepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
+          cp -r ../tjw-qa-automation/allure-report/. .
+          touch .nojekyll
+          git config user.name "tjw-qa-automation-bot"
+          git config user.email "noreply@tractorjunction.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No report changes to publish"
+          else
+            git commit -m "Publish report $(date -u '+%Y-%m-%d %H:%M:%S UTC') [nightly CI]"
+            git push origin gh-pages
+          fi
