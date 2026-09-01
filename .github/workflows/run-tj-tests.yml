@@ -23,8 +23,8 @@ name: Run TJ Lead Forms Suite
 
 on:
   schedule:
-    # 19:30 UTC = 01:00 AM IST. Adjust to taste.
-    - cron: '30 19 * * *'
+    # 21:30 UTC = 03:00 AM IST (next day).
+    - cron: '30 21 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -248,9 +248,12 @@ jobs:
           set -e
           PRIORITY="Normal"
           if [ "${FAILED_COUNT:-0}" -gt 0 ]; then PRIORITY="High"; fi
-          SUBJECT="Automation Execution Report - TractorJunction - $(date -u '+%Y-%m-%d') (Nightly CI)"
-          EXECUTION_DATETIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          DESCRIPTION="Nightly full regression on PROD (English), branch ${BRANCH_REF} — AllLeadFormsSuit, HomePageSuite, PageRedirectionsSuit, UsedTractorSuite, LocationMasterSuit, desktop + mobile. ${PASSING:-0}/${TOTAL_TESTS:-0} passed. See the Allure report for the full per-suite / per-device breakdown."
+          # IST via fixed +330 min offset rather than a named timezone — works the same
+          # regardless of the runner's tzdata availability.
+          IST_NOW=$(date -u -d '+330 minutes' '+%Y-%m-%d %H:%M:%S IST')
+          SUBJECT="Automation Execution Report - TractorJunction - $(date -u -d '+330 minutes' '+%Y-%m-%d')"
+          EXECUTION_DATETIME="$IST_NOW"
+          DESCRIPTION="This is the nightly full regression run for TractorJunction on PROD, tested in English across desktop and mobile viewports, on branch ${BRANCH_REF}. It covers the AllLeadFormsSuit, HomePageSuite, PageRedirectionsSuit, UsedTractorSuite, and LocationMasterSuit test suites. ${PASSING:-0} of ${TOTAL_TESTS:-0} test cases passed — see the attached Allure report for the full per-suite and per-device breakdown."
 
           curl -sS --location "$EMAIL_API_URL" \
             --header "X-Api-Key: ${EMAIL_API_KEY}" \
