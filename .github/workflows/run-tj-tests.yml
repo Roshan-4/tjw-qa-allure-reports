@@ -64,6 +64,10 @@ jobs:
       - name: Run AllLeadFormsSuit — desktop (PROD, English)
         env:
           ENV: PROD
+          # cypress.config.js reads process.env[ENV] directly as the baseUrl (normally sourced
+          # from the private repo's own gitignored .env, which a fresh CI checkout doesn't
+          # have). PROD is tractorjunction.com's public URL, not a secret.
+          PROD: https://www.tractorjunction.com/
         run: >
           npx cypress run --browser chrome --config video=false --env allure=true --spec
           "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
@@ -126,6 +130,7 @@ jobs:
         env:
           ENV: PROD
           DEVICE: vivo-t4x
+          PROD: https://www.tractorjunction.com/
         run: >
           npx cypress run --browser chrome --config video=false --env allure=true --spec
           "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
