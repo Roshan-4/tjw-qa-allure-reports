@@ -194,23 +194,27 @@ jobs:
           pattern: allure-results-*
           merge-multiple: true
 
-      - name: Count total/passed/failed from merged results
-        id: counts
-        working-directory: tjw-qa-automation/allure-results
-        run: |
-          # Each *-result.json has a top-level "status" (passed/failed/broken/skipped/unknown).
-          # Matrix job outputs only expose the LAST matrix instance, not an aggregate across all
-          # 10 suite/device combinations, so count directly from the merged result files instead.
-          total=$(ls -1 *-result.json 2>/dev/null | wc -l)
-          passing=$(grep -l '"status"[[:space:]]*:[[:space:]]*"passed"' *-result.json 2>/dev/null | wc -l)
-          failing=$((total - passing))
-          echo "total=$total" >> "$GITHUB_OUTPUT"
-          echo "passing=$passing" >> "$GITHUB_OUTPUT"
-          echo "failing=$failing" >> "$GITHUB_OUTPUT"
-
       - name: Generate Allure report
         working-directory: tjw-qa-automation
         run: npm run generate:report
+
+      - name: Count total/passed/failed from Allure's own generated summary
+        id: counts
+        working-directory: tjw-qa-automation/allure-report/widgets
+        run: |
+          # FIX (Sep 2026): counting raw allure-results/*-result.json files directly previously
+          # reported ~2x the real number (e.g. 780 instead of the true 390) — some tests write
+          # more than one *-result.json (retries/hook-wrapped results) that Allure's own report
+          # generator correctly collapses into one test in its statistics, but a naive file count
+          # does not. Read the numbers Allure itself computed (widgets/summary.json, produced by
+          # the "Generate Allure report" step above) instead — this is exactly what the published
+          # report shows, so the email can never disagree with it again.
+          node -e "
+            const s = require('./summary.json').statistic;
+            console.log('total=' + s.total);
+            console.log('passing=' + s.passed);
+            console.log('failing=' + (s.failed + s.broken));
+          " >> "$GITHUB_OUTPUT"
 
       - name: Publish report into this repo's gh-pages content
         id: publish
