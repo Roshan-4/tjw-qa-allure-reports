@@ -3,9 +3,17 @@ name: Run TJ Lead Forms Suite
 # This repo (Roshan-4/tjw-qa-allure-reports) is public, so GitHub Actions minutes here are
 # unlimited/free — unlike the private auto-junction/tjw-qa-automation repo where the actual
 # test code lives. This workflow checks out that private repo's code (via PRIVATE_REPO_TOKEN,
-# a repo secret with read access to it), runs the Cypress suite here instead, publishes the
-# Allure report to this repo's own gh-pages content, and emails the result — so none of it
-# counts against the private repo's Actions quota.
+# a repo secret with read access to it), runs the Cypress suites here instead, publishes the
+# combined Allure report to this repo's own gh-pages content, and emails the result — so none
+# of it counts against the private repo's Actions quota.
+#
+# IMPORTANT — Admin panel is NEVER run here. Specs under cypress/e2e/Tests/Admin/ (or anything
+# that logs into manage.tractorjunction.com / tractorjunction.com/manage) mutate real, currently
+# -live production content and must only ever be run manually, under direct supervision — never
+# unattended in CI. None of the suites below reference that folder; do not add one that does.
+#
+# All private-repo checkouts pin `ref: Locator-Fixing` — the code under test lives on that
+# branch, not the default branch, as of Sep 2026. Update REF below if/when that changes.
 #
 # Trigger is schedule + workflow_dispatch ONLY (never pull_request) — schedule always runs the
 # workflow as defined on the default branch (gh-pages, this repo's default), not from a PR, and
@@ -24,20 +32,74 @@ permissions:
 
 env:
   NODE_VERSION: 20
+  PRIVATE_REPO: auto-junction/tjw-qa-automation
+  REF: Locator-Fixing
+  # cypress.config.js reads process.env[ENV] directly as baseUrl, normally sourced from the
+  # private repo's own gitignored .env (which a fresh CI checkout doesn't have). This is
+  # tractorjunction.com's public URL, not a secret.
+  PROD_URL: https://www.tractorjunction.com/
 
 jobs:
-  desktop-tests:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # AllLeadFormsSuit — run as an isolated per-spec list (not the aggregated suite
+          # file) deliberately: that file require()s all 13 specs into one continuous browser
+          # session, which degrades badly over ~100+ PROD page navigations (documented in
+          # AGENTS.md). Comma-separated --spec gives each file its own fresh browser.
+          - suite: allleadforms
+            device: desktop
+            specs: cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js
+          - suite: allleadforms
+            device: mobile
+            specs: cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js
+
+          # HomePageSuite — 19 specs
+          - suite: homepage
+            device: desktop
+            specs: cypress/e2e/Tests/HomePage/FindYourRightTractor.cy.js,cypress/e2e/Tests/HomePage/TractorsInYear.cy.js,cypress/e2e/Tests/HomePage/TractorsByBrands.cy.js,cypress/e2e/Tests/HomePage/BuyUsedTractor.cy.js,cypress/e2e/Tests/HomePage/GetUsedTractorsInStates.cy.js,cypress/e2e/Tests/HomePage/TractorsByBudget.cy.js,cypress/e2e/Tests/HomePage/TractorsByHP.cy.js,cypress/e2e/Tests/HomePage/MiniTractors.cy.js,cypress/e2e/Tests/HomePage/CompareTractors.cy.js,cypress/e2e/Tests/HomePage/PopularTractorImplements.cy.js,cypress/e2e/Tests/HomePage/TractorNews.cy.js,cypress/e2e/Tests/HomePage/LatestBlogVideo.cy.js,cypress/e2e/Tests/HomePage/ToolsAndServices.cy.js,cypress/e2e/Tests/HomePage/SocialMediaSection.cy.js,cypress/e2e/Tests/HomePage/TopNewTractors.cy.js,cypress/e2e/Tests/HomePage/TractorJunctionServices.cy.js,cypress/e2e/Tests/HomePage/FarmjunctionPlatform.cy.js,cypress/e2e/Tests/HomePage/FooterLinks.cy.js,cypress/e2e/Tests/HomePage/FooterSocialBottom.cy.js
+          - suite: homepage
+            device: mobile
+            specs: cypress/e2e/Tests/HomePage/FindYourRightTractor.cy.js,cypress/e2e/Tests/HomePage/TractorsInYear.cy.js,cypress/e2e/Tests/HomePage/TractorsByBrands.cy.js,cypress/e2e/Tests/HomePage/BuyUsedTractor.cy.js,cypress/e2e/Tests/HomePage/GetUsedTractorsInStates.cy.js,cypress/e2e/Tests/HomePage/TractorsByBudget.cy.js,cypress/e2e/Tests/HomePage/TractorsByHP.cy.js,cypress/e2e/Tests/HomePage/MiniTractors.cy.js,cypress/e2e/Tests/HomePage/CompareTractors.cy.js,cypress/e2e/Tests/HomePage/PopularTractorImplements.cy.js,cypress/e2e/Tests/HomePage/TractorNews.cy.js,cypress/e2e/Tests/HomePage/LatestBlogVideo.cy.js,cypress/e2e/Tests/HomePage/ToolsAndServices.cy.js,cypress/e2e/Tests/HomePage/SocialMediaSection.cy.js,cypress/e2e/Tests/HomePage/TopNewTractors.cy.js,cypress/e2e/Tests/HomePage/TractorJunctionServices.cy.js,cypress/e2e/Tests/HomePage/FarmjunctionPlatform.cy.js,cypress/e2e/Tests/HomePage/FooterLinks.cy.js,cypress/e2e/Tests/HomePage/FooterSocialBottom.cy.js
+
+          # PageRedirectionsSuit — 25 specs
+          - suite: pageredirections
+            device: desktop
+            specs: cypress/e2e/Tests/PageRedirections/Top500PageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/HeaderRedirections.cy.js,cypress/e2e/Tests/PageRedirections/FooterRedirections.cy.js,cypress/e2e/Tests/PageRedirections/HomePageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewTractorsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedTractorsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewImplementsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedImplementsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewHarvestersListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedHarvestersListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewTractorsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedTractorsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewImplementsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedImplementsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewHarvestersProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedHarvestersProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/BrandListingpages.cy.js,cypress/e2e/Tests/PageRedirections/AllBrandsPage.cy.js,cypress/e2e/Tests/PageRedirections/ComparePages.cy.js,cypress/e2e/Tests/PageRedirections/EMICalculatorPages.cy.js,cypress/e2e/Tests/PageRedirections/LoanPages.cy.js,cypress/e2e/Tests/PageRedirections/DealersPages.cy.js,cypress/e2e/Tests/PageRedirections/NewsPages.cy.js,cypress/e2e/Tests/PageRedirections/ShowroomPages.cy.js,cypress/e2e/Tests/PageRedirections/TyrePages.cy.js
+          - suite: pageredirections
+            device: mobile
+            specs: cypress/e2e/Tests/PageRedirections/Top500PageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/HeaderRedirections.cy.js,cypress/e2e/Tests/PageRedirections/FooterRedirections.cy.js,cypress/e2e/Tests/PageRedirections/HomePageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewTractorsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedTractorsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewImplementsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedImplementsListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewHarvestersListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedHarvestersListingPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewTractorsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedTractorsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewImplementsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedImplementsProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/NewHarvestersProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/UsedHarvestersProductDetailPageRedirections.cy.js,cypress/e2e/Tests/PageRedirections/BrandListingpages.cy.js,cypress/e2e/Tests/PageRedirections/AllBrandsPage.cy.js,cypress/e2e/Tests/PageRedirections/ComparePages.cy.js,cypress/e2e/Tests/PageRedirections/EMICalculatorPages.cy.js,cypress/e2e/Tests/PageRedirections/LoanPages.cy.js,cypress/e2e/Tests/PageRedirections/DealersPages.cy.js,cypress/e2e/Tests/PageRedirections/NewsPages.cy.js,cypress/e2e/Tests/PageRedirections/ShowroomPages.cy.js,cypress/e2e/Tests/PageRedirections/TyrePages.cy.js
+
+          # UsedTractorSuite — 2 specs
+          - suite: usedtractor
+            device: desktop
+            specs: cypress/e2e/Tests/ListingPages/UsedTractorListingRevamp.cy.js,cypress/e2e/Tests/ProductDetailPages/UsedTractorsProductDetailPages.cy.js
+          - suite: usedtractor
+            device: mobile
+            specs: cypress/e2e/Tests/ListingPages/UsedTractorListingRevamp.cy.js,cypress/e2e/Tests/ProductDetailPages/UsedTractorsProductDetailPages.cy.js
+
+          # LocationMasterSuit — 7 specs (suite file's paths fixed Sep 2026, see AGENTS.md)
+          - suite: locationmaster
+            device: desktop
+            specs: cypress/e2e/Tests/LocationMaster/StateValidations/StateValidations.cy.js,cypress/e2e/Tests/LocationMaster/DistrictValidations/DistrictValidations.cy.js,cypress/e2e/Tests/LocationMaster/TehsilValidations/TehsilValidations.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/Top500PageRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/UsedTractorsByStateRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/UsedTractorsByCityRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/DealersByStateCityRedirections.cy.js
+          - suite: locationmaster
+            device: mobile
+            specs: cypress/e2e/Tests/LocationMaster/StateValidations/StateValidations.cy.js,cypress/e2e/Tests/LocationMaster/DistrictValidations/DistrictValidations.cy.js,cypress/e2e/Tests/LocationMaster/TehsilValidations/TehsilValidations.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/Top500PageRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/UsedTractorsByStateRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/UsedTractorsByCityRedirections.cy.js,cypress/e2e/Tests/LocationMaster/LMPageRedirections/DealersByStateCityRedirections.cy.js
+
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     outputs:
       total: ${{ steps.stats.outputs.total }}
       passing: ${{ steps.stats.outputs.passing }}
       failing: ${{ steps.stats.outputs.failing }}
     steps:
-      - name: Checkout private test-automation repo
+      - name: Checkout private test-automation repo (${{ env.REF }})
         uses: actions/checkout@v4
         with:
-          repository: auto-junction/tjw-qa-automation
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ env.REF }}
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
 
       - name: Set up Node
@@ -61,109 +123,45 @@ jobs:
       - name: Verify Cypress binary is present
         run: npx cypress verify
 
-      - name: Run AllLeadFormsSuit — desktop (PROD, English)
+      - name: Run ${{ matrix.suite }} — ${{ matrix.device }} (PROD, English)
         env:
           ENV: PROD
-          # cypress.config.js reads process.env[ENV] directly as the baseUrl (normally sourced
-          # from the private repo's own gitignored .env, which a fresh CI checkout doesn't
-          # have). PROD is tractorjunction.com's public URL, not a secret.
-          PROD: https://www.tractorjunction.com/
+          PROD: ${{ env.PROD_URL }}
+          DEVICE: ${{ matrix.device == 'mobile' && 'vivo-t4x' || '' }}
         run: >
-          npx cypress run --browser chrome --config video=false --env allure=true --spec
-          "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
-          | tee cypress-desktop.log
+          npx cypress run --browser chrome --config video=false --env allure=true
+          --spec "${{ matrix.specs }}" | tee cypress-run.log
         continue-on-error: true
 
       - name: Aggregate pass/fail counts
         id: stats
         run: |
-          total=$(grep -oE '│\s*Tests:\s*[0-9]+' cypress-desktop.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
-          passing=$(grep -oE '│\s*Passing:\s*[0-9]+' cypress-desktop.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
-          failing=$(grep -oE '│\s*Failing:\s*[0-9]+' cypress-desktop.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
+          total=$(grep -oE '│\s*Tests:\s*[0-9]+' cypress-run.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
+          passing=$(grep -oE '│\s*Passing:\s*[0-9]+' cypress-run.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
+          failing=$(grep -oE '│\s*Failing:\s*[0-9]+' cypress-run.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
           echo "total=$total" >> "$GITHUB_OUTPUT"
           echo "passing=$passing" >> "$GITHUB_OUTPUT"
           echo "failing=$failing" >> "$GITHUB_OUTPUT"
 
-      - name: Upload desktop allure-results
+      - name: Upload allure-results (${{ matrix.suite }}-${{ matrix.device }})
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-desktop
+          name: allure-results-${{ matrix.suite }}-${{ matrix.device }}
           path: allure-results
           retention-days: 7
-
-  mobile-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-    outputs:
-      total: ${{ steps.stats.outputs.total }}
-      passing: ${{ steps.stats.outputs.passing }}
-      failing: ${{ steps.stats.outputs.failing }}
-    steps:
-      - name: Checkout private test-automation repo
-        uses: actions/checkout@v4
-        with:
-          repository: auto-junction/tjw-qa-automation
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Cache node_modules + Cypress binary
-        id: deps-cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            ~/.cache/Cypress
-          key: ${{ runner.os }}-deps-${{ hashFiles('package-lock.json') }}
-
-      - name: Install dependencies (only on cache miss)
-        if: steps.deps-cache.outputs.cache-hit != 'true'
-        run: npm ci
-
-      - name: Verify Cypress binary is present
-        run: npx cypress verify
-
-      - name: Run AllLeadFormsSuit — mobile vivo-t4x (PROD, English)
-        env:
-          ENV: PROD
-          DEVICE: vivo-t4x
-          PROD: https://www.tractorjunction.com/
-        run: >
-          npx cypress run --browser chrome --config video=false --env allure=true --spec
-          "cypress/e2e/Tests/LeadForms/LeadDealers.cy.js,cypress/e2e/Tests/LeadForms/CustomerCareLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadNewImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadNewHarvesters.cy.js,cypress/e2e/Tests/LeadForms/LeadNewTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractors.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedImplements.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedHarvester.cy.js,cypress/e2e/Tests/LeadForms/LeadUsedTractorRequestCallBack.cy.js,cypress/e2e/Tests/LeadForms/LeadSellUsed.cy.js,cypress/e2e/Tests/HomePage/HomePageLeadForms.cy.js,cypress/e2e/Tests/LeadForms/LeadTyres.cy.js"
-          | tee cypress-mobile.log
-        continue-on-error: true
-
-      - name: Aggregate pass/fail counts
-        id: stats
-        run: |
-          total=$(grep -oE '│\s*Tests:\s*[0-9]+' cypress-mobile.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
-          passing=$(grep -oE '│\s*Passing:\s*[0-9]+' cypress-mobile.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
-          failing=$(grep -oE '│\s*Failing:\s*[0-9]+' cypress-mobile.log | grep -oE '[0-9]+' | awk '{s+=$1} END {print s+0}')
-          echo "total=$total" >> "$GITHUB_OUTPUT"
-          echo "passing=$passing" >> "$GITHUB_OUTPUT"
-          echo "failing=$failing" >> "$GITHUB_OUTPUT"
-
-      - name: Upload mobile allure-results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-mobile
-          path: allure-results
-          retention-days: 7
+          if-no-files-found: warn
 
   publish-report:
-    needs: [desktop-tests, mobile-tests]
+    needs: [test]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout private test-automation repo (for allure-config + branding script)
+      - name: Checkout private test-automation repo (${{ env.REF }}) (for allure-config + branding script)
         uses: actions/checkout@v4
         with:
-          repository: auto-junction/tjw-qa-automation
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ env.REF }}
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: tjw-qa-automation
 
@@ -189,17 +187,26 @@ jobs:
         working-directory: tjw-qa-automation
         run: npm ci
 
-      - name: Download desktop allure-results
+      - name: Download all allure-results artifacts
         uses: actions/download-artifact@v4
         with:
-          name: allure-results-desktop
           path: tjw-qa-automation/allure-results
+          pattern: allure-results-*
+          merge-multiple: true
 
-      - name: Download mobile allure-results
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-results-mobile
-          path: tjw-qa-automation/allure-results
+      - name: Count total/passed/failed from merged results
+        id: counts
+        working-directory: tjw-qa-automation/allure-results
+        run: |
+          # Each *-result.json has a top-level "status" (passed/failed/broken/skipped/unknown).
+          # Matrix job outputs only expose the LAST matrix instance, not an aggregate across all
+          # 10 suite/device combinations, so count directly from the merged result files instead.
+          total=$(ls -1 *-result.json 2>/dev/null | wc -l)
+          passing=$(grep -l '"status"[[:space:]]*:[[:space:]]*"passed"' *-result.json 2>/dev/null | wc -l)
+          failing=$((total - passing))
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+          echo "passing=$passing" >> "$GITHUB_OUTPUT"
+          echo "failing=$failing" >> "$GITHUB_OUTPUT"
 
       - name: Generate Allure report
         working-directory: tjw-qa-automation
@@ -232,22 +239,18 @@ jobs:
           EMAIL_IDENTIFIER: ${{ secrets.EMAIL_IDENTIFIER }}
           EMAIL_PROJECT_NAME: ${{ secrets.EMAIL_PROJECT_NAME }}
           EMAIL_SENDER_NAME: ${{ secrets.EMAIL_SENDER_NAME }}
-          DESKTOP_TOTAL: ${{ needs.desktop-tests.outputs.total }}
-          DESKTOP_PASSING: ${{ needs.desktop-tests.outputs.passing }}
-          DESKTOP_FAILING: ${{ needs.desktop-tests.outputs.failing }}
-          MOBILE_TOTAL: ${{ needs.mobile-tests.outputs.total }}
-          MOBILE_PASSING: ${{ needs.mobile-tests.outputs.passing }}
-          MOBILE_FAILING: ${{ needs.mobile-tests.outputs.failing }}
           REPORT_URL: ${{ steps.publish.outputs.report_url }}
+          TOTAL_TESTS: ${{ steps.counts.outputs.total }}
+          PASSING: ${{ steps.counts.outputs.passing }}
+          FAILED_COUNT: ${{ steps.counts.outputs.failing }}
+          BRANCH_REF: ${{ env.REF }}
         run: |
           set -e
-          TOTAL_TESTS=$(( ${DESKTOP_TOTAL:-0} + ${MOBILE_TOTAL:-0} ))
-          FAILED_COUNT=$(( ${DESKTOP_FAILING:-0} + ${MOBILE_FAILING:-0} ))
           PRIORITY="Normal"
-          if [ "$FAILED_COUNT" -gt 0 ]; then PRIORITY="High"; fi
-          DESCRIPTION="Nightly AllLeadFormsSuit on PROD (English) — Desktop: ${DESKTOP_PASSING:-0}/${DESKTOP_TOTAL:-0} passed. Mobile: ${MOBILE_PASSING:-0}/${MOBILE_TOTAL:-0} passed."
+          if [ "${FAILED_COUNT:-0}" -gt 0 ]; then PRIORITY="High"; fi
           SUBJECT="Automation Execution Report - TractorJunction - $(date -u '+%Y-%m-%d') (Nightly CI)"
           EXECUTION_DATETIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          DESCRIPTION="Nightly full regression on PROD (English), branch ${BRANCH_REF} — AllLeadFormsSuit, HomePageSuite, PageRedirectionsSuit, UsedTractorSuite, LocationMasterSuit, desktop + mobile. ${PASSING:-0}/${TOTAL_TESTS:-0} passed. See the Allure report for the full per-suite / per-device breakdown."
 
           curl -sS --location "$EMAIL_API_URL" \
             --header "X-Api-Key: ${EMAIL_API_KEY}" \
@@ -260,8 +263,8 @@ jobs:
             --form "data[environment]=PROD" \
             --form "data[reportUrl]=${REPORT_URL}" \
             --form "data[screenshotUrl]=" \
-            --form "data[failedCount]=${FAILED_COUNT}" \
-            --form "data[totalTestCases]=${TOTAL_TESTS}" \
+            --form "data[failedCount]=${FAILED_COUNT:-0}" \
+            --form "data[totalTestCases]=${TOTAL_TESTS:-0}" \
             --form "data[description]=${DESCRIPTION}" \
             --form "data[priority]=${PRIORITY}" \
             --form "data[senderName]=${EMAIL_SENDER_NAME}" \
