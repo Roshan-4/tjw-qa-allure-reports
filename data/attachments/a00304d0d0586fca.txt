@@ -1,0 +1,15 @@
+1. Mahindra Yuvraj 215 NXT NT
+                
+	Check Tractor Price (id: 1180)
+2. ACE DI-854 NG
+                
+	Check Tractor Price (id: 84)
+3. Mahindra 255 DI Power Plus
+                
+	Check Tractor Price (id: 103)
+4. Standard DI 335
+                
+	Check Tractor Price (id: 296)
+5. Mahindra JIVO 225 DI 4WD NT
+                
+	Check Tractor Price (id: 1051)
