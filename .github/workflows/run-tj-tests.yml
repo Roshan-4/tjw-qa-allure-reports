@@ -27,6 +27,17 @@ on:
     - cron: '30 21 * * *'
   workflow_dispatch: {}
 
+# FIX (Sep 2026): two overlapping runs (e.g. a manual workflow_dispatch fired again before an
+# earlier run finished, or a dispatch landing during the nightly schedule) both reach the
+# publish-report job's `git push origin gh-pages` around the same time; whichever pushes second
+# gets a non-fast-forward rejection ("! [rejected] gh-pages -> gh-pages (fetch first)") and the
+# whole run fails even though the tests themselves passed. Queuing same-workflow runs instead of
+# letting them race removes the condition entirely. cancel-in-progress is deliberately false —
+# a queued rerun still needs to finish and publish, not get killed by the next trigger.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -221,17 +232,45 @@ jobs:
         run: |
           set -e
           cd report-repo
-          find . -mindepth 1 -maxdepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
-          cp -r ../tjw-qa-automation/allure-report/. .
-          touch .nojekyll
           git config user.name "tjw-qa-automation-bot"
           git config user.email "noreply@tractorjunction.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No report changes to publish"
-          else
+
+          # Rebuilds the working tree to today's report and stages+commits it. Idempotent and
+          # safe to re-run after a `git reset --hard origin/gh-pages` below, since the content
+          # it produces only depends on ../tjw-qa-automation/allure-report, not on prior state.
+          stage_report() {
+            find . -mindepth 1 -maxdepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
+            cp -r ../tjw-qa-automation/allure-report/. .
+            touch .nojekyll
+            git add -A
+            if git diff --cached --quiet; then
+              return 1
+            fi
             git commit -m "Publish report $(date -u '+%Y-%m-%d %H:%M:%S UTC') [nightly CI]"
-            git push origin gh-pages
+          }
+
+          # FIX (Sep 2026): a bare `git push origin gh-pages` here was getting rejected as
+          # non-fast-forward whenever something else moved gh-pages between this job's checkout
+          # and its push (originally caused by two overlapping workflow runs — now prevented by
+          # the workflow-level `concurrency` group above, but kept here as defense in depth
+          # against any other source of a concurrent push). On rejection, fetch the branch that
+          # moved, reset onto it, and re-stage the same deterministic snapshot before retrying.
+          if stage_report; then
+            attempt=1
+            until git push origin gh-pages; do
+              if [ "$attempt" -ge 5 ]; then
+                echo "::error::Failed to push report to gh-pages after $attempt attempts"
+                exit 1
+              fi
+              echo "Push rejected (attempt $attempt) — remote gh-pages moved, rebasing onto it and retrying"
+              git fetch origin gh-pages
+              git reset --hard origin/gh-pages
+              stage_report || true
+              attempt=$((attempt + 1))
+              sleep $((attempt * 5))
+            done
+          else
+            echo "No report changes to publish"
           fi
           echo "report_url=https://roshan-4.github.io/tjw-qa-allure-reports/" >> "$GITHUB_OUTPUT"
 
