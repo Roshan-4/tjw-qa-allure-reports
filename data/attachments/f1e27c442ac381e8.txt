@@ -1,0 +1,15 @@
+1. Eicher 188
+                
+	Check Tractor Price (id: 462)
+2. Powertrac Steeltrac 15
+                
+	Check Tractor Price (id: 1098)
+3. Captain 120 Little Master
+                
+	Check Tractor Price (id: 1179)
+4. Sukoon Haldhar Micro-Trac 750
+                
+	Check Tractor Price (id: 1144)
+5. Escorts Steeltrac
+                
+	Check Tractor Price (id: 397)
