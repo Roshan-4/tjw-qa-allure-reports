@@ -1,0 +1,1 @@
+The ~500-URL list maintained in Top500PageUrls.js (site's top pages by traffic)  resolved against the active baseUrl.
