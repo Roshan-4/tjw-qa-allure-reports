@@ -1,0 +1,15 @@
+Captain 200 DI
+                
+	Check Tractor Price ’ 200
+Powertrac Steeltrac 15
+                
+	Check Tractor Price ’ 200
+Sukoon Haldhar Micro-Trac 750
+                
+	Check Tractor Price ’ 200
+Escorts Steeltrac
+                
+	Check Tractor Price ’ 200
+Eicher 188
+                
+	Check Tractor Price ’ 200
