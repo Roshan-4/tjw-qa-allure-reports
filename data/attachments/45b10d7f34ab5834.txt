@@ -1,6 +1,0 @@
-Premium tab  5 tractor card(s)
-1. John Deere 5050 D (id: 248455)
-2. John Deere 5050 D (id: 246178)
-3. John Deere 5050 D (id: 246176)
-4. Eicher 485 (id: 256796)
-5. Mahindra 575 DI XP Plus (id: 256771)
