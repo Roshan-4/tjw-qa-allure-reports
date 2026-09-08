@@ -1,0 +1,15 @@
+1. Mahindra Yuvraj 215 NXT NT
+                
+	Check Tractor Price (id: 1180)
+2. Sonalika DI 30 BAAGBAN
+                
+	Check Tractor Price (id: 446)
+3. Mahindra JIVO 225 DI
+                
+	Check Tractor Price (id: 411)
+4. Standard DI 335
+                
+	Check Tractor Price (id: 296)
+5. Mahindra OJA 2121 4WD
+                
+	Check Tractor Price (id: 975)
