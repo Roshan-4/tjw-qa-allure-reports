@@ -1,1 +1,1 @@
-{"reportName":"Tractor Junction Automation Report","testRuns":[],"statistic":{"failed":22,"broken":0,"skipped":80,"passed":487,"unknown":0,"total":589},"time":{"start":1788910303535,"stop":1788915584465,"duration":5280930,"minDuration":1,"maxDuration":577454,"sumDuration":15837443}}
+{"reportName":"Tractor Junction Automation Report","testRuns":[],"statistic":{"failed":23,"broken":0,"skipped":35,"passed":524,"unknown":0,"total":582},"time":{"start":1788996331389,"stop":1789002127137,"duration":5795748,"minDuration":1,"maxDuration":591660,"sumDuration":16363476}}

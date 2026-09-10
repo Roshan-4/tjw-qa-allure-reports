@@ -1,0 +1,6 @@
+Premium tab  5 tractor card(s)
+1. John Deere 5050 D (id: 248455)
+2. John Deere 5050 D (id: 246178)
+3. John Deere 5050 D (id: 246176)
+4. Massey Ferguson 7250 DI (id: 257397)
+5. Swaraj 733 FE (id: 257320)
