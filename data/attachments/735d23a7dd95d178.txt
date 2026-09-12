@@ -1,6 +1,0 @@
-Popular tab  5 tractor card(s)
-1. Powertrac Euro 439 (id: 720)
-2. Eicher 380 (id: 132)
-3. Massey Ferguson 241 DI (id: 984)
-4. Farmtrac 60 Classic (id: 166)
-5. Mahindra 575 DI XP Plus (id: 511)
