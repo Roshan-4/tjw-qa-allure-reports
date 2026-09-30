@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"96bc2c84c3e2f7215dd9f68eb8ecf284","name":"All Lead Forms Suit","statistic":{"failed":1,"broken":0,"skipped":0,"passed":29,"unknown":0,"total":30}}]}
+{"total":2,"items":[{"uid":"ae643c2a0a813d3a3820f885daa9ed45","name":"Lead Forms","statistic":{"failed":1,"broken":0,"skipped":0,"passed":98,"unknown":0,"total":99}},{"uid":"5cfe2eef28b5794e1595ba37ecd4fef0","name":"Home Page","statistic":{"failed":0,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":7}}]}
