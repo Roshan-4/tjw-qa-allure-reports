@@ -1,0 +1,91 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Verify ""Talk to Dealer"" under the Service tab on a Tractor Subsidy page (Madhya Pradesh) opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13941","TJWA_TC_DL_004","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission","Lead Dealers Form","",""
+"Verify the CTA below a News article banner opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","28736","TJWA_TC_LNT_016","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on a New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20564","TJWA_TC_LNT_004","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors By Budget"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20108","TJWA_TC_LNT_002","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Similar Tractors"" section CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","19871","TJWA_TC_LNT_008","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the EMI widget CTA on an EMI Calculator result page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","22845","TJWA_TC_LNT_020","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""New Tractors"" recommendation CTA on a Used Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","37798","TJWA_TC_LNT_009","All Lead Forms Suite","2026-09-30","failed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on a further New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","21014","TJWA_TC_LNT_005","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","11276","TJWA_TC_LNT_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite > Negative & boundary — mobile number field","Lead New Tractors Form","",""
+"Verify the ""Related Brand Tractors"" CTA on an Implement Brand listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20816","TJWA_TC_LNT_012","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"[Negative] Verify submitting the new tractor lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","16982","TJWA_TC_LNT_NEG_001 - [Negative] Invalid mobile number blocks submission","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite > Negative & boundary — mobile number field","Lead New Tractors Form","",""
+"Verify ""Talk to Dealer"" on a New Tractor product detail page opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","19908","TJWA_TC_DL_001","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission","Lead Dealers Form","",""
+"Verify the ""Tractors By Budget"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20261","TJWA_TC_LNT_011","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on the Massey Ferguson brand listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","19370","TJWA_TC_LNT_006","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors In {Year}"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","18535","TJWA_TC_LNT_001","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify ""Talk to Dealer"" on a Tractor Service Centers (Pune) page opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12752","TJWA_TC_DL_003","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission","Lead Dealers Form","",""
+"Verify the ""New Tractors"" CTA on the Tyres listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","21343","TJWA_TC_LNT_017","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the compare-card-section CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","22200","TJWA_TC_LNT_013","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the sticky-footer CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","21510","TJWA_TC_LNT_014","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the hero-section primary CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","21609","TJWA_TC_LNT_007","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"[Negative] Verify submitting the dealer lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","10806","TJWA_TC_DL_NEG_001 - [Negative] Invalid mobile number blocks submission","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission > Negative & boundary — mobile number field","Lead Dealers Form","",""
+"Verify a ""Book Now"" CTA on the Customer Care landing page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13097","TJWA_TC_CC_LUT_001 - Used tractor lead form on Customer Care landing page (EN)","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead: Customer Care Forms (EN only)","Lead Customer Care Forms (EN only)","",""
+"Verify the ""Top Tractor Brands"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20759","TJWA_TC_LNT_010","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""New Tractors"" CTA on a Certified Dealer detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","21607","TJWA_TC_LNT_015","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify ""Talk to Dealer"" on the Find Tractor Dealers (Mahindra) page opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","16442","TJWA_TC_DL_002","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission","Lead Dealers Form","",""
+"Verify the ""Popular Tractor"" CTA on a Tyre product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","20768","TJWA_TC_LNT_018","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Mini Tractors"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","18839","TJWA_TC_LNT_003","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"Verify the ""Get On-Road Price"" CTA on the Customer Care landing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14600","TJWA_TC_CC_LNT_001 - New tractor lead form on Customer Care landing page (EN)","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead: Customer Care Forms (EN only)","Lead Customer Care Forms (EN only)","",""
+"Verify the ""Popular Brand Tractors"" CTA on a Brand Service Center listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","24150","TJWA_TC_LNT_019","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead:New Tractors Suite","Lead New Tractors Form","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","7765","TJWA_TC_DL_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","All Lead Forms Suite","2026-09-30","passed","2026-09-30","Lead Dealers Form Submission > Negative & boundary — mobile number field","Lead Dealers Form","",""
