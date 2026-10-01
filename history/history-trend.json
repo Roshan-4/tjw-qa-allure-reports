@@ -1,1 +1,1 @@
-[{"data":{"failed":25,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":27}}]
+[{"buildOrder":2,"reportUrl":"https://tj-jenkins.test/job/tractor-junction/job/tjw-qa-automation/2/allure","reportName":"AllureReport","data":{"failed":26,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":30}}]
