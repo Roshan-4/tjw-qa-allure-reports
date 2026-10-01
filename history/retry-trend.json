@@ -1,1 +1,1 @@
-[{"buildOrder":2,"reportUrl":"https://tj-jenkins.test/job/tractor-junction/job/tjw-qa-automation/2/allure","reportName":"AllureReport","data":{"run":30,"retry":0}}]
+[{"buildOrder":3,"reportUrl":"https://tj-jenkins.test/job/tractor-junction/job/tjw-qa-automation/3/allure","reportName":"AllureReport","data":{"run":0,"retry":0}},{"buildOrder":2,"reportUrl":"https://tj-jenkins.test/job/tractor-junction/job/tjw-qa-automation/2/allure","reportName":"AllureReport","data":{"run":30,"retry":0}}]
