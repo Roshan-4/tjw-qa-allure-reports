@@ -1,340 +1,340 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"Verify the ""How Does It Work"" CTA on a state-specific Showrooms page (Madhya Pradesh) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","29119","TJWA_TC_LUT_020","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify ""Book Now"" on an HP-filtered Used Tractors listing (Under 50 HP) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14257","TJWA_TC_LUT_008","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify an ""Other Brand Rotavator"" CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10334","TJWA_TC_LNI_006","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the ""Similar Tractors"" section CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14701","TJWA_TC_LNT_008","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the ""Check Offers"" tyre CTA on the MRF tyre brand page opens the tyre lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","6740","TJWA_TC_TL_003","","2026-10-06","passed","2026-10-06","","Lead Tyre Form Submission","",""
-"Verify the ""New Tractors"" CTA on the Tyres listing page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10958","TJWA_TC_LNT_017","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify ""Book Now"" on the Assured/Certified Used Tractors listing page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14575","TJWA_TC_LUT_004","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors By Budget"" card opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13192","TJWA_TC_LNT_002","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"[Negative] Verify submitting the used tractor request call back form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","17695","TJWA_TC_UTRCB_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:Used Tractor Request Call Back Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the first tractor card under the Latest Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
-
-Expected: Lead should be submitted successfully.","8498","TJWA_TC_TIY_LEAD_002 - Latest first card opens CTP and submits lead","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Tractors in {YEAR} — Check Tractor Price","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5060","TJWA_TC_DL_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead Dealers Form Submission","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the ""Popular Tractor"" CTA on a Tyre product detail page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11169","TJWA_TC_LNT_018","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the ""Related Brand Tractors"" CTA on an Implement Brand listing page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13239","TJWA_TC_LNT_012","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the ""New Tractors"" CTA on a Certified Dealer detail page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14828","TJWA_TC_LNT_015","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the Call Back CTA on a state-specific Showrooms page (Rajasthan) opens the request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","33089","TJWA_TC_UTRCB_002","","2026-10-06","passed","2026-10-06","","Lead:Used Tractor Request Call Back Suite","",""
-"Verify ""Talk to Dealer"" under the Service tab on a Tractor Subsidy page (Madhya Pradesh) opens the dealer lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10773","TJWA_TC_DL_004","","2026-10-06","passed","2026-10-06","","Lead Dealers Form Submission","",""
-"Verify the complete user journey (Tab → Tractor Card → Lead Form → Successful Submission → Return Flow) works correctly across all three tabs.
-
-Expected: Complete workflow should execute successfully without functional issues.","28027","TJWA_TC_TIY_JOURNEY_001 - Tab to lead form to submission to return flow on all tabs","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Tractors in {YEAR} — Check Tractor Price","",""
-"Verify a ""Check Tractor Price""-style CTA on the New Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10874","TJWA_TC_LNH_001","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify a ""Tractor Implements"" CTA on the Sonalika brand listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11401","TJWA_TC_LNI_009","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the ""By HP"" CTA on the Landforce brand harvester listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8868","TJWA_TC_LNH_008","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify the full Sell Used Implement wizard (category, details, images, contact) submits successfully.
-
-Expected: Wizard should complete and submit successfully.","12890","TJWA_TC_LSU_002","","2026-10-06","passed","2026-10-06","","Lead:Sell Used Suite","",""
-"Verify the ""Get The Best Price"" CTA on a Tyre product detail page opens the tyre lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","7072","TJWA_TC_TL_004","","2026-10-06","passed","2026-10-06","","Lead Tyre Form Submission","",""
-"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
-
-Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","5222","TJWA_TC_UTRCB_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Tractor Request Call Back Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Negative] Verify the mobile number field declares its validation contract (pattern=""[6789][0-9]{9}"" — 10 digits, starting 6-9). KNOWN GAP: confirmed live that this form's submit handler does not actually enforce this pattern (a too-short number is accepted and the thank-you confirmation still appears) — unlike every other lead form in this suite, which do correctly reject it.
-
-Expected: The field should declare the 10-digit, 6-9-prefixed pattern. (Actual submission-time enforcement is a known gap — see description.)","2840","TJWA_TC_LUH_NEG_001 - [Negative] Mobile field declares its validation pattern (known enforcement gap on submit)","Lead:Used Harvesters Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5641","TJWA_TC_LNT_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Tractors Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the ""Popular Used Tractors"" section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11087","TJWA_TC_LUT_014","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the full Sell Used Tractor wizard (location, details, condition, images, loan) submits successfully.
-
-Expected: Wizard should complete and show the thank-you confirmation.","18111","TJWA_TC_LSU_001","","2026-10-06","passed","2026-10-06","","Lead:Sell Used Suite","",""
-"Verify ""Book Now"" on a Homepage Popular Used Tractors (Popular tab) card opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9963","TJWA_TC_LUT_002","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the ""Tractors By Budget"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14001","TJWA_TC_LNT_011","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"[Boundary] Verify Step 1's mobile number field correctly accepts a full 10-digit valid mobile number.
-
-Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","3089","TJWA_TC_LSU_BOUNDARY_001 - [Boundary] Step 1 mobile field accepts full 10-digit number","Lead:Sell Used Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — Sell Used Tractor Step 1 mobile field","",""
-"Verify the Used Tractors CTA on a News article detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9612","TJWA_TC_LUT_018","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify ""Talk to Dealer"" on a New Tractor product detail page opens the dealer lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12426","TJWA_TC_DL_001","","2026-10-06","passed","2026-10-06","","Lead Dealers Form Submission","",""
-"Verify a ""Book Now"" CTA on the Customer Care landing page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9000","TJWA_TC_CC_LUT_001 - Used tractor lead form on Customer Care landing page (EN)","","2026-10-06","passed","2026-10-06","","Lead: Customer Care Forms (EN only)","",""
-"Verify the ""Contact Seller"" form on a Used Implement product detail page submits successfully with valid data.
-
-Expected: Lead form should submit successfully.","8964","TJWA_TC_LUI_001","","2026-10-06","passed","2026-10-06","","Lead:Used Implements Suite","",""
-"Verify ""Book Now"" on a brand-filtered Used Tractors listing (VST Shakti) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14171","TJWA_TC_LUT_005","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the ""Check Tractor Price"" CTA on the Massey Ferguson brand listing page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14088","TJWA_TC_LNT_006","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the ""Similar Harvesters"" section CTA on a Harvester product detail page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8294","TJWA_TC_LNH_006","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify the ""Get On-Road Price"" CTA on the Customer Care landing page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11942","TJWA_TC_CC_LNT_001 - New tractor lead form on Customer Care landing page (EN)","","2026-10-06","passed","2026-10-06","","Lead: Customer Care Forms (EN only)","",""
-"Verify the ""Popular Implements"" CTA on a News article detail page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10213","TJWA_TC_LNI_012","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the ""Best Offers"" call back CTA on the Assured Used Tractors listing page opens the request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","21179","TJWA_TC_UTRCB_001","","2026-10-06","passed","2026-10-06","","Lead:Used Tractor Request Call Back Suite","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","4642","TJWA_TC_LNTRCB_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Tractor Request Call Back Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5653","TJWA_TC_LNI_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Implements Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify ""Book Now"" on a year-filtered Used Tractors listing (Below 2019 model) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12437","TJWA_TC_LUT_007","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the hero-section CTA on a Harvester product detail page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8752","TJWA_TC_LNH_005","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","4208","TJWA_TC_LNH_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Harvesters Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
-
-Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","3599","TJWA_TC_LUI_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Implements Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the ""Check Tractor Price"" CTA on a Homepage ""Mini Tractors"" card opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12508","TJWA_TC_LNT_003","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the sticky-footer CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13539","TJWA_TC_LNT_014","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the hero-section primary CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12851","TJWA_TC_LNT_007","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify ""Book Now"" on the Used Tractors listing page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14091","TJWA_TC_LUT_003","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"[Negative] Verify submitting the request call back form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6870","TJWA_TC_LNTRCB_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Tractor Request Call Back Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify ""Book Now"" on the John Deere Used Tractors listing opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12092","TJWA_TC_LUT_011","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify clicking the Book Now CTA on the first tractor card opens the used tractor lead form and submission succeeds.
-
-Expected: Lead form should be filled and submitted successfully with valid test data.","8568","TJWA_TC_BUT_LEAD_001 - Click Book Now on first tractor card and submit used tractor lead form","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Buy Used Tractors — Book Now","",""
-"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors In {Year}"" card opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11810","TJWA_TC_LNT_001","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the Call Back CTA on a New Tractor product detail page opens the request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9694","TJWA_TC_LNTRCB_001","","2026-10-06","passed","2026-10-06","","Lead:New Tractor Request Call Back Suite","",""
-"Verify the ""Similar Tractor Implements"" category CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10131","TJWA_TC_LNI_007","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify ""Book Now"" on a price-filtered Used Tractors listing (Under 4 Lakh) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13300","TJWA_TC_LUT_006","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify ""Book Now"" on a location-filtered Used Tractors listing (Pune) opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12643","TJWA_TC_LUT_009","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the ""Popular Used Tractors"" CTA on a Used Implement product detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10303","TJWA_TC_LUT_016","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the Call Back CTA on the News landing page opens the request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8304","TJWA_TC_LNTRCB_002","","2026-10-06","passed","2026-10-06","","Lead:New Tractor Request Call Back Suite","",""
-"Verify ""Book Now"" on a Homepage Premium Used Tractors card opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10237","TJWA_TC_LUT_001","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the ""Popular Used Tractors"" CTA on a Used Harvester product detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9838","TJWA_TC_LUT_017","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
-
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","4161","TJWA_TC_LUT_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:Used Tractors Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the hero-section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12381","TJWA_TC_LUT_013","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify the full Sell Used Harvester wizard (details, condition, images, contact) submits successfully.
-
-Expected: Wizard should complete and submit successfully.","12485","TJWA_TC_LSU_003","","2026-10-06","passed","2026-10-06","","Lead:Sell Used Suite","",""
-"Verify the ""Top Tractor Brands"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12892","TJWA_TC_LNT_010","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"[Negative] Verify submitting the new harvester lead form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6386","TJWA_TC_LNH_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Harvesters Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify the ""Popular Brand Tractors"" CTA on a Brand Service Center listing page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","12921","TJWA_TC_LNT_019","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the ""Check Tractor Price"" CTA on a New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","15266","TJWA_TC_LNT_004","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the first tractor card under the Upcoming Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
-
-Expected: Lead should be submitted successfully.","11266","TJWA_TC_TIY_LEAD_003 - Upcoming first card opens CTP and submits lead","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Tractors in {YEAR} — Check Tractor Price","",""
-"Verify a ""Tractor Implements"" CTA on the Mahindra brand listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11522","TJWA_TC_LNI_008","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify clicking Check Tractor Price on a Mini Tractor card opens the new tractor lead form and submission succeeds.
-
-Expected: Lead form opens and submits successfully.","14345","TJWA_TC_MT_004 - Click Check Tractor Price and submit new tractor lead form","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Mini Tractors — Check Tractor Price","",""
-"Verify the compare-card-section CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13978","TJWA_TC_LNT_013","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the CTA below a News article banner opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13117","TJWA_TC_LNT_016","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"[Negative] Verify Step 1 of the Sell Used Tractor wizard does not advance to Step 2 (Tractor Details) when an invalid (too-short) mobile number is entered.
-
-Expected: The wizard should remain on Step 1; the Step 2 brand dropdown should not appear.","5316","TJWA_TC_LSU_NEG_001 - [Negative] Invalid mobile number blocks advancing past Step 1","Lead:Sell Used Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — Sell Used Tractor Step 1 mobile field","",""
-"[Negative] Verify submitting the new tractor lead form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","7484","TJWA_TC_LNT_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Tractors Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify ""Book Now"" on the Mini Used Tractors listing opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14755","TJWA_TC_LUT_010","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify a CTA on the Sprayer implements listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9569","TJWA_TC_LNI_004","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the ""New Tractors"" recommendation CTA on a Used Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","30099","TJWA_TC_LNT_009","","2026-10-06","failed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the EMI widget CTA on an EMI Calculator result page opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","13043","TJWA_TC_LNT_020","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify the hero-section CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11928","TJWA_TC_LNI_005","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the ""Popular Farm Equipments — Harvester"" CTA on the All Brands page (Harvesters tab) opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10359","TJWA_TC_LNH_010","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify clicking Contact Dealer on an implement card opens the implement lead form and submission succeeds.
-
-Expected: Lead form opens and submits successfully with thank-you confirmation.","10263","TJWA_TC_PTI_003 - Click Contact Dealer and submit implement lead form","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Popular Tractor Implements — Contact Dealer","",""
-"Verify ""Talk to Dealer"" on the Find Tractor Dealers (Mahindra) page opens the dealer lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11171","TJWA_TC_DL_002","","2026-10-06","passed","2026-10-06","","Lead Dealers Form Submission","",""
-"Verify the ""Used Tractors"" recommendation CTA on a New Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","20353","TJWA_TC_LUT_012","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"[Negative] Verify submitting the dealer lead form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6348","TJWA_TC_DL_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead Dealers Form Submission","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
-
-Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","3177","TJWA_TC_LUH_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Harvesters Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"[Negative] Verify submitting the new implement lead form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","8148","TJWA_TC_LNI_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Implements Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
 "Verify ""Talk to Dealer"" on a Tractor Service Centers (Pune) page opens the dealer lead form and a valid submission succeeds.
 
-Expected: Lead form should open and submit successfully.","8116","TJWA_TC_DL_003","","2026-10-06","passed","2026-10-06","","Lead Dealers Form Submission","",""
-"Verify a CTA on the Plough implements listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9491","TJWA_TC_LNI_003","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify ""Contact Dealer"" on a Homepage Popular Tractor Implements card opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","11150","TJWA_TC_LNI_001","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
+Expected: Lead form should open and submit successfully.","7317","TJWA_TC_DL_003","","2026-10-07","passed","2026-10-07","","Lead Dealers Form Submission","",""
 "Verify a CTA on the Mini Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
 
-Expected: Lead form should open and submit successfully.","8234","TJWA_TC_LNH_003","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify the ""Contact Seller"" form on a Used Harvester product detail page submits successfully with valid data.
+Expected: Lead form should open and submit successfully.","8978","TJWA_TC_LNH_003","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify a CTA on the Plough implements listing page opens the new implement lead form and a valid submission succeeds.
 
-Expected: Lead form should submit successfully.","7977","TJWA_TC_LUH_001","","2026-10-06","passed","2026-10-06","","Lead:Used Harvesters Suite","",""
-"Verify the ""Similar Used Tractors"" section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
+Expected: Lead form should open and submit successfully.","10325","TJWA_TC_LNI_003","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify the ""How Does It Work"" CTA on a state-specific Showrooms page (Madhya Pradesh) opens the used tractor lead form and a valid submission succeeds.
 
-Expected: Lead form should open and submit successfully.","8553","TJWA_TC_LUT_015","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify a ""Check Offers""/""Click Here"" tyre CTA on the Tyres landing page opens the tyre lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","9236","TJWA_TC_TL_002","","2026-10-06","passed","2026-10-06","","Lead Tyre Form Submission","",""
-"Verify the ""Check Offers"" tyre CTA on a Tractor product detail page opens the tyre lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8936","TJWA_TC_TL_001","","2026-10-06","passed","2026-10-06","","Lead Tyre Form Submission","",""
-"Verify the ""Check Tractor Price"" CTA on a further New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","14117","TJWA_TC_LNT_005","","2026-10-06","passed","2026-10-06","","Lead:New Tractors Suite","",""
-"Verify a further CTA on the New Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8394","TJWA_TC_LNH_002","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify a CTA on the Malkit brand mini-harvester listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8793","TJWA_TC_LNH_009","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify the first tractor card under the Popular Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
-
-Expected: Lead should be submitted successfully.","8255","TJWA_TC_TIY_LEAD_001 - Popular first card opens CTP and submits lead","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Tractors in {YEAR} — Check Tractor Price","",""
-"Verify the Call Back CTA on a News article detail page opens the request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","7459","TJWA_TC_LNTRCB_003","","2026-10-06","passed","2026-10-06","","Lead:New Tractor Request Call Back Suite","",""
-"Verify the ""Popular Farm Equipments — Implements"" CTA on the All Brands page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10355","TJWA_TC_LNI_011","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify a CTA on the Fieldking implement brand listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10734","TJWA_TC_LNI_010","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"Verify the Call Back CTA on a Certified Dealer detail page opens the dealer request call back form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","6082","TJWA_TC_UTRCB_003","","2026-10-06","passed","2026-10-06","","Lead:Used Tractor Request Call Back Suite","",""
-"Verify the ""How Does It Work"" CTA on the Showrooms landing page opens the used tractor lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","30281","TJWA_TC_LUT_019","","2026-10-06","passed","2026-10-06","","Lead:Used Tractors Suite","",""
-"Verify clicking Check Tractor Price on any card opens the new tractor lead form and submission succeeds for all tabs.
-
-Expected: Lead form opens and submission completes successfully from each budget tab.","49205","TJWA_TC_TBB_008 - Check Tractor Price CTA opens lead form and submits from each budget tab","Home Page Lead Forms","2026-10-06","passed","2026-10-06","","Tractors by Budget — Check Tractor Price","",""
-"Verify a further CTA on the Mini Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8100","TJWA_TC_LNH_004","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"[Negative] Verify the mobile number field declares its validation contract (pattern=""[6789][0-9]{9}"" — 10 digits, starting 6-9). Same shared ""Contact Seller"" component as the Used Harvester form, which has a confirmed gap where this pattern is not actually enforced on submit.
-
-Expected: The field should declare the 10-digit, 6-9-prefixed pattern.","3251","TJWA_TC_LUI_NEG_001 - [Negative] Mobile field declares its validation pattern (known enforcement gap on submit)","Lead:Used Implements Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
-"Verify a CTA on the Landforce brand harvester listing page opens the new harvester lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","8595","TJWA_TC_LNH_007","","2026-10-06","passed","2026-10-06","","Lead:New Harvesters Suite","",""
-"Verify a CTA on the Tractor Implements listing page opens the new implement lead form and a valid submission succeeds.
-
-Expected: Lead form should open and submit successfully.","10861","TJWA_TC_LNI_002","","2026-10-06","passed","2026-10-06","","Lead:New Implements Suite","",""
-"[Negative] Verify submitting the used tractor lead form with an invalid (too-short) mobile number does not succeed.
-
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6003","TJWA_TC_LUT_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:Used Tractors Suite","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
+Expected: Lead form should open and submit successfully.","15059","TJWA_TC_LUT_020","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
 "[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
 
-Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5485","TJWA_TC_TL_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead Tyre Form Submission","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","4785","TJWA_TC_DL_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead Dealers Form Submission","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the ""Similar Harvesters"" section CTA on a Harvester product detail page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","7819","TJWA_TC_LNH_006","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the ""Check Tractor Price"" CTA on a New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","15140","TJWA_TC_LNT_004","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Tractors By Budget"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","16419","TJWA_TC_LNT_011","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Related Brand Tractors"" CTA on an Implement Brand listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12964","TJWA_TC_LNT_012","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"[Negative] Verify submitting the dealer lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6832","TJWA_TC_DL_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead Dealers Form Submission","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5667","TJWA_TC_LUT_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:Used Tractors Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Negative] Verify submitting the new harvester lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","5826","TJWA_TC_LNH_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Harvesters Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify a ""Book Now"" CTA on the Customer Care landing page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10876","TJWA_TC_CC_LUT_001 - Used tractor lead form on Customer Care landing page (EN)","","2026-10-07","passed","2026-10-07","","Lead: Customer Care Forms (EN only)","",""
+"Verify the ""How Does It Work"" CTA on the Showrooms landing page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13356","TJWA_TC_LUT_019","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""New Tractors"" CTA on the Tyres listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11832","TJWA_TC_LNT_017","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify ""Book Now"" on the Mini Used Tractors listing opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","17480","TJWA_TC_LUT_010","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Popular Used Tractors"" CTA on a Used Implement product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11329","TJWA_TC_LUT_016","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify ""Book Now"" on the Used Tractors listing page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","16399","TJWA_TC_LUT_003","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify a further CTA on the Mini Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","7458","TJWA_TC_LNH_004","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the ""New Tractors"" recommendation CTA on a Used Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","30504","TJWA_TC_LNT_009","","2026-10-07","failed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Contact Seller"" form on a Used Implement product detail page submits successfully with valid data.
+
+Expected: Lead form should submit successfully.","8822","TJWA_TC_LUI_001","","2026-10-07","passed","2026-10-07","","Lead:Used Implements Suite","",""
+"Verify the first tractor card under the Upcoming Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
+
+Expected: Lead should be submitted successfully.","8336","TJWA_TC_TIY_LEAD_003 - Upcoming first card opens CTP and submits lead","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Tractors in {YEAR} — Check Tractor Price","",""
+"Verify a ""Check Offers""/""Click Here"" tyre CTA on the Tyres landing page opens the tyre lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9728","TJWA_TC_TL_002","","2026-10-07","passed","2026-10-07","","Lead Tyre Form Submission","",""
+"Verify a ""Check Tractor Price""-style CTA on the New Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10486","TJWA_TC_LNH_001","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the ""Check Tractor Price"" CTA on a further New Tractors listing page card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13614","TJWA_TC_LNT_005","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Get On-Road Price"" CTA on the Customer Care landing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13862","TJWA_TC_CC_LNT_001 - New tractor lead form on Customer Care landing page (EN)","","2026-10-07","passed","2026-10-07","","Lead: Customer Care Forms (EN only)","",""
+"Verify the hero-section CTA on a Harvester product detail page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","8607","TJWA_TC_LNH_005","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the full Sell Used Harvester wizard (details, condition, images, contact) submits successfully.
+
+Expected: Wizard should complete and submit successfully.","12892","TJWA_TC_LSU_003","","2026-10-07","passed","2026-10-07","","Lead:Sell Used Suite","",""
+"Verify the hero-section primary CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14604","TJWA_TC_LNT_007","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify ""Book Now"" on a price-filtered Used Tractors listing (Under 4 Lakh) opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13449","TJWA_TC_LUT_006","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify a CTA on the Sprayer implements listing page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9846","TJWA_TC_LNI_004","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
 "[Negative] Verify submitting the tyre lead form with an invalid (too-short) mobile number does not succeed.
 
-Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","7059","TJWA_TC_TL_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead Tyre Form Submission","2026-10-06","passed","2026-10-06","","Negative & boundary — mobile number field","",""
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","7454","TJWA_TC_TL_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead Tyre Form Submission","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Negative] Verify submitting the new implement lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","8106","TJWA_TC_LNI_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Implements Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Contact Dealer"" on a Homepage Popular Tractor Implements card opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12452","TJWA_TC_LNI_001","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify ""Book Now"" on the John Deere Used Tractors listing opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11092","TJWA_TC_LUT_011","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the CTA below a News article banner opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13765","TJWA_TC_LNT_016","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Used Tractors"" recommendation CTA on a New Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13922","TJWA_TC_LUT_012","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify a further CTA on the New Harvesters listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","8896","TJWA_TC_LNH_002","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify ""Book Now"" on a brand-filtered Used Tractors listing (VST Shakti) opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14585","TJWA_TC_LUT_005","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","4345","TJWA_TC_LNTRCB_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Tractor Request Call Back Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Book Now"" on an HP-filtered Used Tractors listing (Under 50 HP) opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14991","TJWA_TC_LUT_008","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"[Negative] Verify Step 1 of the Sell Used Tractor wizard does not advance to Step 2 (Tractor Details) when an invalid (too-short) mobile number is entered.
+
+Expected: The wizard should remain on Step 1; the Step 2 brand dropdown should not appear.","5539","TJWA_TC_LSU_NEG_001 - [Negative] Invalid mobile number blocks advancing past Step 1","Lead:Sell Used Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — Sell Used Tractor Step 1 mobile field","",""
+"[Negative] Verify submitting the new tractor lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","7763","TJWA_TC_LNT_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Tractors Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify clicking Check Tractor Price on a Mini Tractor card opens the new tractor lead form and submission succeeds.
+
+Expected: Lead form opens and submits successfully.","51564","TJWA_TC_MT_004 - Click Check Tractor Price and submit new tractor lead form","Home Page Lead Forms","2026-10-07","failed","2026-10-07","","Mini Tractors — Check Tractor Price","",""
+"Verify the ""Popular Brand Tractors"" CTA on a Brand Service Center listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14493","TJWA_TC_LNT_019","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the hero-section CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9738","TJWA_TC_LNI_005","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify clicking the Book Now CTA on the first tractor card opens the used tractor lead form and submission succeeds.
+
+Expected: Lead form should be filled and submitted successfully with valid test data.","10187","TJWA_TC_BUT_LEAD_001 - Click Book Now on first tractor card and submit used tractor lead form","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Buy Used Tractors — Book Now","",""
+"[Negative] Verify submitting the used tractor lead form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The lead form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","6870","TJWA_TC_LUT_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:Used Tractors Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Book Now"" on a year-filtered Used Tractors listing (Below 2019 model) opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14817","TJWA_TC_LUT_007","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the Call Back CTA on a state-specific Showrooms page (Rajasthan) opens the request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","24377","TJWA_TC_UTRCB_002","","2026-10-07","passed","2026-10-07","","Lead:Used Tractor Request Call Back Suite","",""
+"Verify the ""Check Offers"" tyre CTA on the MRF tyre brand page opens the tyre lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","6410","TJWA_TC_TL_003","","2026-10-07","passed","2026-10-07","","Lead Tyre Form Submission","",""
+"Verify the ""Popular Tractor"" CTA on a Tyre product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11998","TJWA_TC_LNT_018","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Best Offers"" call back CTA on the Assured Used Tractors listing page opens the request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","26459","TJWA_TC_UTRCB_001","","2026-10-07","passed","2026-10-07","","Lead:Used Tractor Request Call Back Suite","",""
+"Verify the Call Back CTA on a New Tractor product detail page opens the request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11591","TJWA_TC_LNTRCB_001","","2026-10-07","passed","2026-10-07","","Lead:New Tractor Request Call Back Suite","",""
+"Verify the first tractor card under the Popular Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
+
+Expected: Lead should be submitted successfully.","8628","TJWA_TC_TIY_LEAD_001 - Popular first card opens CTP and submits lead","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Tractors in {YEAR} — Check Tractor Price","",""
+"Verify the ""Popular Used Tractors"" CTA on a Used Harvester product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11140","TJWA_TC_LUT_017","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Similar Tractor Implements"" category CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9168","TJWA_TC_LNI_007","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors By Budget"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","16902","TJWA_TC_LNT_002","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify clicking Check Tractor Price on any card opens the new tractor lead form and submission succeeds for all tabs.
+
+Expected: Lead form opens and submission completes successfully from each budget tab.","52350","TJWA_TC_TBB_008 - Check Tractor Price CTA opens lead form and submits from each budget tab","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Tractors by Budget — Check Tractor Price","",""
+"[Negative] Verify submitting the request call back form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","8060","TJWA_TC_LNTRCB_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:New Tractor Request Call Back Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Talk to Dealer"" on a New Tractor product detail page opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14929","TJWA_TC_DL_001","","2026-10-07","passed","2026-10-07","","Lead Dealers Form Submission","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","3897","TJWA_TC_LNH_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Harvesters Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the ""New Tractors"" CTA on a Certified Dealer detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12939","TJWA_TC_LNT_015","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify a ""Tractor Implements"" CTA on the Sonalika brand listing page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11965","TJWA_TC_LNI_009","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify a ""Tractor Implements"" CTA on the Mahindra brand listing page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11657","TJWA_TC_LNI_008","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify the EMI widget CTA on an EMI Calculator result page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13772","TJWA_TC_LNT_020","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","7733","TJWA_TC_LNT_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Tractors Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Book Now"" on a Homepage Premium Used Tractors card opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11091","TJWA_TC_LUT_001","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify a CTA on the Malkit brand mini-harvester listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","8628","TJWA_TC_LNH_009","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the ""Similar Used Tractors"" section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9578","TJWA_TC_LUT_015","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the complete user journey (Tab → Tractor Card → Lead Form → Successful Submission → Return Flow) works correctly across all three tabs.
+
+Expected: Complete workflow should execute successfully without functional issues.","29473","TJWA_TC_TIY_JOURNEY_001 - Tab to lead form to submission to return flow on all tabs","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Tractors in {YEAR} — Check Tractor Price","",""
+"Verify the first tractor card under the Latest Tractors tab opens the Check Tractor Price lead form and successfully submits a lead.
+
+Expected: Lead should be submitted successfully.","8114","TJWA_TC_TIY_LEAD_002 - Latest first card opens CTP and submits lead","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Tractors in {YEAR} — Check Tractor Price","",""
+"Verify a CTA on the Fieldking implement brand listing page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9541","TJWA_TC_LNI_010","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify ""Talk to Dealer"" on the Find Tractor Dealers (Mahindra) page opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11836","TJWA_TC_DL_002","","2026-10-07","passed","2026-10-07","","Lead Dealers Form Submission","",""
+"Verify the ""By HP"" CTA on the Landforce brand harvester listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","7795","TJWA_TC_LNH_008","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the sticky-footer CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","15017","TJWA_TC_LNT_014","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Popular Farm Equipments — Implements"" CTA on the All Brands page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9704","TJWA_TC_LNI_011","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify a CTA on the Tractor Implements listing page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","11456","TJWA_TC_LNI_002","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5198","TJWA_TC_LNI_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead:New Implements Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
+
+Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","3708","TJWA_TC_LUI_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Implements Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the full Sell Used Tractor wizard (location, details, condition, images, loan) submits successfully.
+
+Expected: Wizard should complete and show the thank-you confirmation.","15066","TJWA_TC_LSU_001","","2026-10-07","passed","2026-10-07","","Lead:Sell Used Suite","",""
+"Verify the Call Back CTA on a Certified Dealer detail page opens the dealer request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","6851","TJWA_TC_UTRCB_003","","2026-10-07","passed","2026-10-07","","Lead:Used Tractor Request Call Back Suite","",""
+"[Boundary] Verify Step 1's mobile number field correctly accepts a full 10-digit valid mobile number.
+
+Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","4688","TJWA_TC_LSU_BOUNDARY_001 - [Boundary] Step 1 mobile field accepts full 10-digit number","Lead:Sell Used Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — Sell Used Tractor Step 1 mobile field","",""
+"Verify an ""Other Brand Rotavator"" CTA on an Implement product detail page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9647","TJWA_TC_LNI_006","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify ""Book Now"" on the Assured/Certified Used Tractors listing page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","14683","TJWA_TC_LUT_004","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Top Tractor Brands"" CTA on the All Brands page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","15357","TJWA_TC_LNT_010","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify a CTA on the Landforce brand harvester listing page opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","7635","TJWA_TC_LNH_007","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify clicking Contact Dealer on an implement card opens the implement lead form and submission succeeds.
+
+Expected: Lead form opens and submits successfully with thank-you confirmation.","10907","TJWA_TC_PTI_003 - Click Contact Dealer and submit implement lead form","Home Page Lead Forms","2026-10-07","passed","2026-10-07","","Popular Tractor Implements — Contact Dealer","",""
+"Verify the hero-section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10370","TJWA_TC_LUT_013","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Check Offers"" tyre CTA on a Tractor product detail page opens the tyre lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10428","TJWA_TC_TL_001","","2026-10-07","passed","2026-10-07","","Lead Tyre Form Submission","",""
+"Verify the Call Back CTA on a News article detail page opens the request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9440","TJWA_TC_LNTRCB_003","","2026-10-07","passed","2026-10-07","","Lead:New Tractor Request Call Back Suite","",""
+"Verify the full Sell Used Implement wizard (category, details, images, contact) submits successfully.
+
+Expected: Wizard should complete and submit successfully.","11222","TJWA_TC_LSU_002","","2026-10-07","passed","2026-10-07","","Lead:Sell Used Suite","",""
+"Verify ""Talk to Dealer"" under the Service tab on a Tractor Subsidy page (Madhya Pradesh) opens the dealer lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","7253","TJWA_TC_DL_004","","2026-10-07","passed","2026-10-07","","Lead Dealers Form Submission","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Mini Tractors"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12937","TJWA_TC_LNT_003","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the Call Back CTA on the News landing page opens the request call back form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","8369","TJWA_TC_LNTRCB_002","","2026-10-07","passed","2026-10-07","","Lead:New Tractor Request Call Back Suite","",""
+"[Negative] Verify the mobile number field declares its validation contract (pattern=""[6789][0-9]{9}"" — 10 digits, starting 6-9). Same shared ""Contact Seller"" component as the Used Harvester form, which has a confirmed gap where this pattern is not actually enforced on submit.
+
+Expected: The field should declare the 10-digit, 6-9-prefixed pattern.","3889","TJWA_TC_LUI_NEG_001 - [Negative] Mobile field declares its validation pattern (known enforcement gap on submit)","Lead:Used Implements Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the compare-card-section CTA on the Compare Tractors results page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","12499","TJWA_TC_LNT_013","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify the ""Popular Implements"" CTA on a News article detail page opens the new implement lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9355","TJWA_TC_LNI_012","","2026-10-07","passed","2026-10-07","","Lead:New Implements Suite","",""
+"Verify the ""Popular Farm Equipments — Harvester"" CTA on the All Brands page (Harvesters tab) opens the new harvester lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10657","TJWA_TC_LNH_010","","2026-10-07","passed","2026-10-07","","Lead:New Harvesters Suite","",""
+"Verify the ""Popular Used Tractors"" section CTA on a Used Tractor product detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","9718","TJWA_TC_LUT_014","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Contact Seller"" form on a Used Harvester product detail page submits successfully with valid data.
+
+Expected: Lead form should submit successfully.","8611","TJWA_TC_LUH_001","","2026-10-07","passed","2026-10-07","","Lead:Used Harvesters Suite","",""
+"Verify the ""Check Tractor Price"" CTA on a Homepage ""Tractors In {Year}"" card opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13812","TJWA_TC_LNT_001","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
+
+Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","5927","TJWA_TC_UTRCB_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Tractor Request Call Back Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Boundary] Verify the mobile number field correctly accepts a full 10-digit valid mobile number.
+
+Expected: A 10-digit mobile number starting 6-9 should be accepted into the field.","3691","TJWA_TC_LUH_BOUNDARY_001 - [Boundary] Mobile number field accepts full 10-digit number","Lead:Used Harvesters Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the ""Get The Best Price"" CTA on a Tyre product detail page opens the tyre lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","6791","TJWA_TC_TL_004","","2026-10-07","passed","2026-10-07","","Lead Tyre Form Submission","",""
+"[Negative] Verify the mobile number field declares its validation contract (pattern=""[6789][0-9]{9}"" — 10 digits, starting 6-9). KNOWN GAP: confirmed live that this form's submit handler does not actually enforce this pattern (a too-short number is accepted and the thank-you confirmation still appears) — unlike every other lead form in this suite, which do correctly reject it.
+
+Expected: The field should declare the 10-digit, 6-9-prefixed pattern. (Actual submission-time enforcement is a known gap — see description.)","3847","TJWA_TC_LUH_NEG_001 - [Negative] Mobile field declares its validation pattern (known enforcement gap on submit)","Lead:Used Harvesters Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"[Negative] Verify submitting the used tractor request call back form with an invalid (too-short) mobile number does not succeed.
+
+Expected: The form should remain open and should not reach the thank-you/success state when the mobile number is invalid.","12900","TJWA_TC_UTRCB_NEG_001 - [Negative] Invalid mobile number blocks submission","Lead:Used Tractor Request Call Back Suite","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify ""Book Now"" on a Homepage Popular Used Tractors (Popular tab) card opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10787","TJWA_TC_LUT_002","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Check Tractor Price"" CTA on the Massey Ferguson brand listing page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13456","TJWA_TC_LNT_006","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"Verify ""Book Now"" on a location-filtered Used Tractors listing (Pune) opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","13374","TJWA_TC_LUT_009","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
+"Verify the ""Similar Tractors"" section CTA on a New Tractor product detail page opens the new tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","18267","TJWA_TC_LNT_008","","2026-10-07","passed","2026-10-07","","Lead:New Tractors Suite","",""
+"[Boundary] Verify the mobile number field enforces a maximum of 10 digits.
+
+Expected: The field should not accept more than 10 digits, matching a valid Indian mobile number length.","5384","TJWA_TC_TL_BOUNDARY_001 - [Boundary] Mobile number field enforces max 10 digits","Lead Tyre Form Submission","2026-10-07","passed","2026-10-07","","Negative & boundary — mobile number field","",""
+"Verify the Used Tractors CTA on a News article detail page opens the used tractor lead form and a valid submission succeeds.
+
+Expected: Lead form should open and submit successfully.","10627","TJWA_TC_LUT_018","","2026-10-07","passed","2026-10-07","","Lead:Used Tractors Suite","",""
